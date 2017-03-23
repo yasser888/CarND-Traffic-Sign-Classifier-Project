@@ -135,18 +135,17 @@ which named `conv1_1`, `conv1_2`, `conv2_1`, `conv2_2` and `pool1_1`, `pool1_2`.
 I combined the output of `conv2_1` and `conv2_2` as input of another convolution layer `conv3` and then a pooling layer `pool3`. 
 The `pool3` layer was followed by two fully-connected layers and a softmax layer.
 
-After I built up the new architecture, the training accuracy can achieve 0.99 and the validation accuracy can achieve 0.96, 
-which indicated that the model suffered overfitting. 
-Then I added the local\_response\_normalization layer 
+After I added the local\_response\_normalization layer to reduce overfitting 
 into my model which is used to improve the model's generalization. 
-I also used L2 regularization into my model, which is added into total loss to avoid overfitting.
+I also used L2 regularization into the model, which is added into total loss to avoid overfitting.
 
 * Which parameters were tuned? How were they adjusted and why?
 
 I found that if the epoches were 10 or the learning rate was 0.1 , 
 the validation accuracy of this model can't be so good.
-When the model was trained to the epoch 60, 
-training accuracy reduced to 0.05. So finally I set the epoch into 100.
+When the model was trained to the epoch 50, 
+training accuracy reduced to 0.05.
+I set the epoch into 60 I get good result.
 
 I also try to tune the learning rate. It was training so fast when learning rate was 0.001,
 but it's hard to get better at the end of training. 
