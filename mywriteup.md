@@ -40,15 +40,17 @@ signs data set:
 The code for this step is contained in the third and forth code cells of the IPython notebook. 
 Here is an exploratory visualization of the data set. It is a bar chart showing the number of every traffic sign in training set.
 
-![count](./figures/count.png)
+![count](./examples/count.png)
 
 ### Design and Test a Model Architecture
 
 #### 1. Describe how, and identify where in your code, you preprocessed the image data. What tecniques were chosen and why did you choose these techniques? Consider including images showing the output of each preprocessing technique. Pre-processing refers to techniques such as converting to grayscale, normalization, etc.
 
-The code for this step is contained in the sixth code cells of the IPython notebook.
+The code for this step is contained in the [7] code cells of the IPython notebook.
 
-In this step,Firstly I begin with converting all of the images to grayscale because it can help the model eliminate the harmful effect when the same sign images have different color.
+In this step, I begin with converting all of the images to grayscale 
+Sermanet and LeCun has agood result in their traffic sign classification article with converting  to gray scale,
+it can help also the model eliminate the harmful effect when the same sign images have different color,It also helps to reduce training time .
 
 Here is an example of a traffic sign image before and after grayscaling.
 
@@ -56,14 +58,18 @@ Here is an example of a traffic sign image before and after grayscaling.
 
 #### 2. Describe how, and identify where in your code, you set up training, validation and testing data. How much data was in each set? Explain what techniques were used to split the data into these sets. (OPTIONAL: As described in the "Stand Out Suggestions" part of the rubric, if you generated additional data for training, describe why you decided to generate additional data, how you generated the data, identify where in your code, and provide example images of the additional data)
 
-In this step, I did nothing with the original validation and testing set, but I tried to augment the training set.
+In this step, I kept the original data the original validation and testing set as it is.
 
  To add more data to the the data set, I rotated images randomly with 15° to -15°.
  I alse  changed the horizontal or vertical position of these images.
 
-The fifth code cell of the IPython notebook contains the code for augmenting the data set. I decided to generate additional data because as the training set increasing, the probablility of overfitting will decrease and the accuracy of the model will be better.
+The [6] code cell of the IPython notebook contains the code for augmenting the data set.
 
-After this step, My final training set had 139196 number of images. My final validation and testing set had 4410 and 12530 images.
+I have generated additional data to decrease overfitting and to get better accuracy of the model
+
+
+after adding the new generated images, the final training set had 139196 number of images. 
+and the final validation and testing set had 4410 and 12530 images.
 
 Here is an example of a traffic sign image before and after rotating and  changing image position.
 
@@ -71,11 +77,8 @@ Here is an example of a traffic sign image before and after rotating and  changi
 
 #### 3. Describe, and identify where in your code, what your final model architecture looks like including model type, layers, layer sizes, connectivity, etc.) Consider including a diagram and/or table describing the final model.
 
-The code for my final model is located in the seventh and eighth cells of the ipython notebook.
+The code for the final model is located in cell [8] and cell[9] cells of the ipython notebook.
 
-This follow figure illustrate the architecture of my final model.
-
-![architecture](./figures/architecture.png)
 
 This model consisted of the following layers:
 
@@ -97,31 +100,29 @@ This model consisted of the following layers:
 
 #### 4. Describe how, and identify where in your code, you trained your model. The discussion can include the type of optimizer, the batch size, number of epochs and any hyperparameters such as learning rate.
 
-The code for training the model is located in the 11th cell of the ipython notebook.
+The code for training the model is located in cell [12] of the ipython notebook.
 
-To train the model, I used the *AdamOptimizer* in my model. And I set the epoches and learning rate to 50 and 0.001. Then I let the model anneal learning rate over every 20 step with the decay rate 0.96 (this code is located in 8th code cell).
+To train the model, I used the *AdamOptimizer* in my model. And I set the epoches and learning rate to 60 and 0.001. Then I let the model anneal learning rate over every 20 step with the decay rate 0.96 (this code is located in cell [9]).
 
 #### 5. Describe the approach taken for finding a solution. Include in the discussion the results on the training, validation and test sets and where in the code these were calculated. Your approach may have been an iterative process, in which case, outline the steps you took to get to the final solution and why you chose those steps. Perhaps your solution involved an already well known implementation or architecture. In this case, discuss why you think the architecture is suitable for the current problem.
 
-The code for calculating the accuracy of the model is located in the 11th and 12th cell of the Ipython notebook.
+The code for calculating the accuracy of the model is located in cell [12] and [13] cell of the Ipython notebook.
 
 My final model results were:
 
 * training set accuracy of 0.998268628
 * validation set accuracy of 0.962358277
 * test set accuracy of 0.947268409
-
+I played alot with hyperparameters to get a good level of validation accuracy,
 I used an iterative approach to build up this model.
 
 * What was the first architecture that was tried and why was it chosen?
 
-At the beginning, I choosed the LeNet-5 as the architecture of my model. Because I think it's easy for me to modify it for this project.
+I began by implementing the same architecture from the LeNet Lab, I choosed the LeNet-5 as the architecture of the model.
 
 * What were some problems with the initial architecture?
 
-At the first time that I ran the LeNet-5 model, it seemed not work. Both the accuracy of training set and validation set were only 0.05. 
-It might encounter the underfitting because of the low number of parameters. 
-Actually，I just use the LeNest-5 implemented in the class with the only change of output layer parameters.
+I just use the LeNest-5 implemented in the class with the only change of output layer parameters.
  In this condition. the number of parameters is 64,242(= 5x5x1x6 + 5x5x6x16 + 400x120 + 120x84 + 84x43).
 
 * How was the architecture adjusted and why was it adjusted? Typical adjustments could include choosing a different model architecture, adding or taking away layers (pooling, dropout, convolution, etc), using an activation function or changing the activation function. One common justification for adjusting an architecture would be due to over fitting or under fitting. A high accuracy on the training set but low accuracy on the validation set indicates over fitting; a low accuracy on both sets indicates under fitting.
@@ -144,7 +145,7 @@ I also used L2 regularization into my model, which is added into total loss to a
 
 I found that if the epoches were 10 or the learning rate was 0.1 , 
 the validation accuracy of this model can't be so good.
-When the model was trained to the epoch 75, 
+When the model was trained to the epoch 60, 
 training accuracy reduced to 0.05. So finally I set the epoch into 100.
 
 I also try to tune the learning rate. It was training so fast when learning rate was 0.001,
