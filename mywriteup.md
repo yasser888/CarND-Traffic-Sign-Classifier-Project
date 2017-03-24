@@ -215,14 +215,6 @@ What makes me confused is that the output value `logits` is so large that the so
 
 For the first image, the model is relatively sure that this is a Speed limit (30km/h) (probability of 1.), and the image does contain a Speed limit (30km/h). The top five soft max probabilities and its preditions were shown in the left 2 columns of following table, and 2he top five `logits` values and its preditions were shown in the right 2 columns of following table.
 
-| Probability           |     Prediction        |                               | Logits Value          |     Prediction        |
-|:---------------------:|:---------------------------------------------:|                             |:---------------------:|:---------------------------------------------:| 
-| 1.00                  | Speed limit (30km/h   |                               | 3002407.75            | Speed limit (30km/h)  |
-| 0.00                  | Speed limit (50km/h)  |                               | 2098761.5             | Speed limit (50km/h)  |
-| 0.00                  | Keep right            |                               | 1314941.375           | Keep right            |
-| 0.00                  | Wild animals crossing |                               | 1243740.25            | Wild animals crossing |
-| 0.00                  |Speed limit (20km/h    |                               | 1042306.4375          | Speed limit (20km/h)  |
-
 | Probability         	|     Prediction	        					| 
 |:---------------------:|:---------------------------------------------:| 
 | .1         			| Speed limit (30km/h   									| 
@@ -231,7 +223,7 @@ For the first image, the model is relatively sure that this is a Speed limit (30
 | .0      			| Wild animals crossing					 				|
 | .0				    | Wild animals crossing    							|
 
-| Probability         	|     Prediction	        					| 
+| Logits Value         	|     Prediction	        					| 
 |:---------------------:|:---------------------------------------------:| 
 | 3002407.75            | Speed limit (30km/h)  |
 | 2098761.5             | Speed limit (50km/h)  |
@@ -241,40 +233,71 @@ For the first image, the model is relatively sure that this is a Speed limit (30
 
 For the second image, the model is relatively sure that this is a Priority road sign (probability of 1.), and the image contain a Priority road. The top five soft max probabilities and its preditions were shown in the left 2 columns of following table, and 2he top five `logits` values and its preditions were shown in the right 2 columns of following table.
 
-| Probability       |     Prediction                        |               | Logits Value     |     Prediction                      |
-|:-----------------:|:--------------- ---------------------:|               |:------------------------------------------------------:|
-| 1.00              | Priority road                         |               | 8117783.5        | Priority road                       |
-| 0.00              | Roundabout mandatory                  |               |  3902181.        | Roundabout mandatory                | 
-| 0.00              | Speed limit (100km/h)                 |               | 1216163.125      | Speed limit(100km/h)                |
-| 0.00              | End of all speed and passing limits   |               | 982649.875       | End of all speed and passing limits |
-| 0.00              |Speed limit (30km/h)                   |               | 904448.125       |Speed limit (30km/h)                 |
+| Probability         	|     Prediction	        					| 
+|:---------------------:|:---------------------------------------------:|     
+| 1.00              | Priority road                         |
+| 0.00              | Roundabout mandatory                  |
+| 0.00              | Speed limit (100km/h)                 |
+| 0.00              | End of all speed and passing limits   |
+| 0.00              |Speed limit (30km/h)                   |
+
+| Logits Value       |     Prediction                        |
+|:-----------------:|:--------------- ---------------------:|
+| 8117783.5        | Priority road                       |
+|  3902181.        | Roundabout mandatory                | 
+| 1216163.125      | Speed limit(100km/h)                |
+| 982649.875       | End of all speed and passing limits |
+| 904448.125       |Speed limit (30km/h)                 |
 
 For the third image, the model is relatively sure that this is a Keep right sign (probability of 1.), and the image does contain a Keep right sign. The top five soft max probabilities and its preditions were shown in the left 2 columns of following table, and 2he top five `logits` values and its preditions were shown in the right 2 columns of following table.
 
-| Probability       |     Prediction                          |               | Logits Value     |     Prediction                      |
-|:-----------------:|:--------------- --------------  -------:|               |:------------------------------------------------------:|
-| 1.00              | Keep right                              |               | 7370561.5        |Keep right                           |
-| 0.00              | Turn left ahead                         |               | 3215804.25       | Turn left ahead                     | 
-| 0.00              |Go straight or right                     |               | 2330247.75       | Go straight or right                |
-| 0.00              | Roundabout mandatory                    |               | 1707326.125      | Roundabout mandatory                |
-| 0.00              |Road work                                |               | 1492557.125      |Road work                            |
+| Probability       |     Prediction                          |  
+|:-----------------:|:--------------- --------------  -------:|   
+| 1.00              | Keep right                              |   
+| 0.00              | Turn left ahead                         |      
+| 0.00              |Go straight or right                     |   
+| 0.00              | Roundabout mandatory                    |   
+| 0.00              |Road work                                |  
+
+  | Logits Value     |     Prediction                      |
+   |:------------------------------------------------------:|
+ | 7370561.5        |Keep right                           |
+ | 3215804.25       | Turn left ahead                     | 
+ | 2330247.75       | Go straight or right                |
+ | 1707326.125      | Roundabout mandatory                |
+ | 1492557.125      |Road work                            |
 
 For the fourth image, the model is relatively sure that this is a Beware of ice/snow sign (probability of 1.), and the image does contain a Beware of ice/snow. The top five soft max probabilities and its preditions were shown in the left 2 columns of following table, and 2he top five `logits` values and its preditions were shown in the right 2 columns of following table.
 
-| Probability       |     Prediction                          |               | Logits Value    |     Prediction                      |
-|:-----------------:|:--------------- --------------  -------:|               |:-----------------------------------------------------:|
-| 1.00              | Beware of ice/snow                      |               | 7491763.5       |Beware of ice/snow                   |
-| 0.00              | Right-of-way at the next intersection   |               | 6958841.5       |Right-of-way at the next intersection| 
-| 0.00              |Dangerous curve to the left              |               | 1936115.75      |Dangerous curve to the left          |
-| 0.00              | Slippery road                           |               | 1898225.125     | Slippery road                       |
-| 0.00              |Turn left ahead                          |               | 1484000.75      |Turn left ahead                      |                 
+| Probability       |     Prediction                          |
+|:-----------------:|:--------------- --------------  -------:|
+| 1.00              | Beware of ice/snow                      |
+| 0.00              | Right-of-way at the next intersection   | 
+| 0.00              |Dangerous curve to the left              |    
+| 0.00              | Slippery road                           |
+| 0.00              |Turn left ahead                          |
+
+| Logits Value    |     Prediction                      |
+|:-----------------------------------------------------:|
+| 7491763.5       |Beware of ice/snow                   |
+| 6958841.5       |Right-of-way at the next intersection| 
+| 1936115.75      |Dangerous curve to the left          |
+| 1898225.125     | Slippery road                       |
+| 1484000.75      |Turn left ahead                      |
 
 For the fifth image, the model is relatively sure that this is a Turn left ahead sign (probability of 1.), and the image does contain a Turn left ahead sign. The top five soft max probabilities and its preditions were shown in the left 2 columns of following table, and 2he top five `logits` values and its preditions were shown in the right 2 columns of following table.
+               | Logits Value    |     Prediction                      |
+|:-----------------:|:--------------- --------------  -------:| 
+| 1.00              |Turn left ahead                          | 
+| 0.00              | Keep right                              |  
+| 0.00              |Go straight or right                     |
+| 0.00              | Ahead only                              | 
+| 0.00              |Road work                                | 
 
-| Probability       |     Prediction                          |               | Logits Value    |     Prediction                      |
-|:-----------------:|:--------------- --------------  -------:|               |:-----------------------------------------------------:|
-| 1.00              |Turn left ahead                          |               | 7310720.       |Turn left ahead                       |
-| 0.00              | Keep right                              |               | 4443056.       |Keep right                            | 
-| 0.00              |Go straight or right                     |               | 3791546.25     |Go straight or right                  |
-| 0.00              | Ahead only                              |               | 1745910.375    | Ahead only                           |
-| 0.00              |Road work                                |               | 1732462.625    |Road work                             |
+ | Logits Value    |     Prediction                      |
+ |:-----------------------------------------------------:|
+ | 7310720.       |Turn left ahead                       |
+| 4443056.       |Keep right                            | 
+| 3791546.25     |Go straight or right                  |
+| 1745910.375    | Ahead only                           |
+| 1732462.625    |Road work                             |
