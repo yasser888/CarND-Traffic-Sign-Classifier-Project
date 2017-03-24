@@ -286,7 +286,8 @@ For the fourth image, the model is relatively sure that this is a Beware of ice/
 | 1484000.75      |Turn left ahead                      |
 
 For the fifth image, the model is relatively sure that this is a Turn left ahead sign (probability of 1.), and the image does contain a Turn left ahead sign. The top five soft max probabilities and its preditions were shown in the left 2 columns of following table, and 2he top five `logits` values and its preditions were shown in the right 2 columns of following table.
-               | Logits Value    |     Prediction                      |
+
+| Logits Value    |     Prediction                      |
 |:---------------------:|:---------------------------------------------:|   
 | 1.00              |Turn left ahead                          | 
 | 0.00              | Keep right                              |  
@@ -294,7 +295,7 @@ For the fifth image, the model is relatively sure that this is a Turn left ahead
 | 0.00              | Ahead only                              | 
 | 0.00              |Road work                                | 
 
- | Logits Value    |     Prediction                      |
+| Logits Value    |     Prediction                      |
 |:---------------------:|:---------------------------------------------:|   
 | 7310720.       |Turn left ahead                       |
 | 4443056.       |Keep right                            | 
