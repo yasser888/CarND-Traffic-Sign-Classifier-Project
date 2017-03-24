@@ -184,8 +184,8 @@ And computation in the network, and hence to also control overfitting.
 
 Here are five German traffic signs that I found on the web:
 
-![Speed limit (30km/h](./examples/1.jpg) ![Priority road](./examples/2.jpg) ![Keep right](./examples/3.jpg)
-![Beware of ice/snow](./examples/4.jpg) ![Turn left ahead](./examples/5.jpg)
+![Speed limit (30km/h](./examples/1.png) ![Priority road](./examples/2.png) ![Keep right](./examples/3.png)
+![Beware of ice/snow](./examples/4.png) ![Turn left ahead](./examples/5.png)
 
 The third image might be difficult to classify because the image is so dark that it's hard to identify the sign.
 
