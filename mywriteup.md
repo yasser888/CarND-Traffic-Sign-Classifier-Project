@@ -216,12 +216,20 @@ What makes me confused is that the output value `logits` is so large that the so
 For the first image, the model is relatively sure that this is a Speed limit (30km/h) (probability of 1.), and the image does contain a Speed limit (30km/h). The top five soft max probabilities and its preditions were shown in the left 2 columns of following table, and 2he top five `logits` values and its preditions were shown in the right 2 columns of following table.
 
 | Probability           |     Prediction        |                               | Logits Value          |     Prediction        |
-|:---------------------:|:--------------- -----:|                               |:---------------------------------------------:|
+|:---------------------:|:---------------------------------------------:|                             |:---------------------:|:---------------------------------------------:| 
 | 1.00                  | Speed limit (30km/h   |                               | 3002407.75            | Speed limit (30km/h)  |
 | 0.00                  | Speed limit (50km/h)  |                               | 2098761.5             | Speed limit (50km/h)  |
 | 0.00                  | Keep right            |                               | 1314941.375           | Keep right            |
 | 0.00                  | Wild animals crossing |                               | 1243740.25            | Wild animals crossing |
 | 0.00                  |Speed limit (20km/h    |                               | 1042306.4375          | Speed limit (20km/h)  |
+
+| Probability         	|     Prediction	        					| 
+|:---------------------:|:---------------------------------------------:| 
+| .60         			| Stop sign   									| 
+| .20     				| U-turn 										|
+| .05					| Yield											|
+| .04	      			| Bumpy Road					 				|
+| .01				    | Slippery Road      							|
 
 For the second image, the model is relatively sure that this is a Priority road sign (probability of 1.), and the image contain a Priority road. The top five soft max probabilities and its preditions were shown in the left 2 columns of following table, and 2he top five `logits` values and its preditions were shown in the right 2 columns of following table.
 
