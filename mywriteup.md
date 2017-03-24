@@ -193,17 +193,17 @@ The fouth image might be difficult to classify because the quality of this pictu
 
 #### 2. Discuss the model's predictions on these new traffic signs and compare the results to predicting on the test set. Identify where in your code predictions were made. At a minimum, discuss what the predictions were, the accuracy on these new predictions, and compare the accuracy to the accuracy on the test set (OPTIONAL: Discuss the results in more detail as described in the "Stand Out Suggestions" part of the rubric).
 
-The code for making predictions on my final model is located in the 14th cell of the Ipython notebook.
+The code for making predictions on my final model is located in the [32] cell of the Ipython notebook.
 
 Here are the results of the prediction:
 
 | Image                 |     Prediction                                |
 |:---------------------:|:---------------------------------------------:|
-| Road work             | Road work                                     |
-| Speed limit (60km/h)  | No vehicles                                   |
-| Children crossin      | Children crossing                             |
-| Stop                  | Stop                                          |
-| General caution       | General caution                               |
+| Speed limit (30km/h)  | Speed limit (30km/h)                          |
+| Priority road         | Priority road                                 |
+| Keep right            | Keep right                                    |
+| Beware of ice/snow    | Beware of ice/snow                            |
+| Turn left ahead       | Turn left ahead                               |
 
 The model was able to correctly guess 4 of the 5 traffic signs, which gives an accuracy of 80%.  The prediction of second image is not right. The accuracy on the these mew images is 80% while it was 94.7% on the testing set thus it seems the model is overfitting.
 
