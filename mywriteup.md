@@ -26,8 +26,8 @@ You're reading it! And my project source code is shown in “Traffic\_Sign\_Clas
 
 #### 1. Provide a basic summary of the data set and identify where in your code the summary was done. In the code, the analysis should be done using python, numpy and/or pandas methods rather than hardcoding results manually.
 
-The code for this step is contained in the second code cell of the IPython notebook. 
-I used the `numpy` library to calculate summary statistics of the traffic
+The code for this step is contained in the [2] code cell of the IPython notebook. 
+using `numpy` library I have calculate summary statistics of the traffic
 signs data set:
 
 * The size of training set is 34799.
@@ -37,10 +37,15 @@ signs data set:
 
 #### 2. Include an exploratory visualization of the dataset and identify where the code is in your code file.
 
-The code for this step is contained in the third and forth code cells of the IPython notebook. 
-Here is an exploratory visualization of the data set. It is a bar chart showing the number of every traffic sign in training set.
+The code for this step is contained in cell [3] [4] and [5] code cells of the IPython notebook. 
+1-	An exploratory visualization of the data set. It is a bar chart showing the number of every traffic sign in training set.
+2-	Number of Training Examples by Class and the labels of each class
+3-	Show the images related to the class label
 
-![count](./examples/count.png)
+![Count](./examples/count.png)
+![ Number of Training Examples by Class](./examples/t_by_c.png)
+![ Signs Calsses Images](./examples/class_image.png)
+
 
 ### Design and Test a Model Architecture
 
@@ -48,32 +53,32 @@ Here is an exploratory visualization of the data set. It is a bar chart showing 
 
 The code for this step is contained in the [7] code cells of the IPython notebook.
 
-In this step, I begin with converting all of the images to grayscale 
-Sermanet and LeCun has agood result in their traffic sign classification article with converting  to gray scale,
-it can help also the model eliminate the harmful effect when the same sign images have different color,It also helps to reduce training time .
+As a first step, I decided to convert the images to grayscale because
+1-	It can help also the model eliminate the harmful effect when the same sign images have different color.
+2-	at the article published by Sermanet and LeCun they have a good result in their traffic sign classification model with converting  to gray scale
+3-	It also helps to reduce training time .
+
 
 Here is an example of a traffic sign image before and after grayscaling.
 
-![grayscale](./figures/grayscale.png)
+![grayscale](./exampels/gray.png)
 
 #### 2. Describe how, and identify where in your code, you set up training, validation and testing data. How much data was in each set? Explain what techniques were used to split the data into these sets. (OPTIONAL: As described in the "Stand Out Suggestions" part of the rubric, if you generated additional data for training, describe why you decided to generate additional data, how you generated the data, identify where in your code, and provide example images of the additional data)
 
-In this step, I kept the original data the original validation and testing set as it is.
-
- To add more data to the the data set, I rotated images randomly with 15° to -15°.
- I alse  changed the horizontal or vertical position of these images.
+I kept the original data the original validation and testing set as it is.
 
 The [6] code cell of the IPython notebook contains the code for augmenting the data set.
+To add more data to the data set, I rotated images randomly with 15° to -15°.
+I also changed the horizontal or vertical position of these images.
 
-I have generated additional data to decrease overfitting and to get better accuracy of the model
+I have generated additional data to decrease overfitting and to get better accuracy of the model.
 
+After adding the new generated images, the final training set had 139196 number of images. 
+And the final validation and testing set had 4410 and 12530 images.
 
-after adding the new generated images, the final training set had 139196 number of images. 
-and the final validation and testing set had 4410 and 12530 images.
+Here is an example of a traffic sign image before and after rotating and changing image position.
 
-Here is an example of a traffic sign image before and after rotating and  changing image position.
-
-![augment](./figures/rotate.png)
+![augment](./examples/ rotation.png)
 
 #### 3. Describe, and identify where in your code, what your final model architecture looks like including model type, layers, layer sizes, connectivity, etc.) Consider including a diagram and/or table describing the final model.
 
@@ -102,7 +107,7 @@ This model consisted of the following layers:
 
 The code for training the model is located in cell [12] of the ipython notebook.
 
-To train the model, I used the *AdamOptimizer* in my model. And I set the epoches and learning rate to 60 and 0.001. Then I let the model anneal learning rate over every 20 step with the decay rate 0.96 (this code is located in cell [9]).
+To train the model, I used the *AdamOptimizer* in my model. And I set the epoches and learning rate to 60 and 0.001. Then I let the model anneal learning rate over every 20 step with the decay rate 0.96 (this code is located in cell [8]).
 
 #### 5. Describe the approach taken for finding a solution. Include in the discussion the results on the training, validation and test sets and where in the code these were calculated. Your approach may have been an iterative process, in which case, outline the steps you took to get to the final solution and why you chose those steps. Perhaps your solution involved an already well known implementation or architecture. In this case, discuss why you think the architecture is suitable for the current problem.
 
@@ -110,61 +115,67 @@ The code for calculating the accuracy of the model is located in cell [12] and [
 
 My final model results were:
 
-* training set accuracy of 0.998268628
-* validation set accuracy of 0.962358277
-* test set accuracy of 0.947268409
-I played alot with hyperparameters to get a good level of validation accuracy,
+* training set accuracy of 0.998124947
+* validation set accuracy of 0.955328803
+* test set accuracy of 0.947268437
+To get a good level of validation accuracy,I changed alot the hyperparameters 
+
 I used an iterative approach to build up this model.
 
 * What was the first architecture that was tried and why was it chosen?
 
-I began by implementing the same architecture from the LeNet Lab, I choosed the LeNet-5 as the architecture of the model.
-
+I began by implementing the same architecture from the LeNet Lab, I choosed the LeNet-5 as the architecture of the model, 
+it's easy for me to modify it for this project.
 * What were some problems with the initial architecture?
+1-Both the accuracy of training set and validation set were only 0.05. 
+2- the underfitting because of the low number of parameters. 
 
 I just use the LeNest-5 implemented in the class with the only change of output layer parameters.
  In this condition. the number of parameters is 64,242(= 5x5x1x6 + 5x5x6x16 + 400x120 + 120x84 + 84x43).
 
+
 * How was the architecture adjusted and why was it adjusted? Typical adjustments could include choosing a different model architecture, adding or taking away layers (pooling, dropout, convolution, etc), using an activation function or changing the activation function. One common justification for adjusting an architecture would be due to over fitting or under fitting. A high accuracy on the training set but low accuracy on the validation set indicates over fitting; a low accuracy on both sets indicates under fitting.
 
-Because of the underfitting problem, I changed the architecture of my initial model. 
+I changed the architecture of the initial model. 
 
-Firstly, I changed the first two convolution layers and two pooling layers into 4 convolution layers and 2 pooling layers. 
-The 4 convolution layers and 2 pooling layers are organized as the architecture figure shown before, 
-which named `conv1_1`, `conv1_2`, `conv2_1`, `conv2_2` and `pool1_1`, `pool1_2`. Then, 
-I combined the output of `conv2_1` and `conv2_2` as input of another convolution layer `conv3` and then a pooling layer `pool3`. 
+1-changeing the first two convolution layers and two pooling layers into 4 convolution layers and 2 pooling layers. 
+which named `conv1_1`, `conv1_2`, `conv2_1`, `conv2_2` and `pool1_1`, `pool1_2`.
+
+2-combineing the output of `conv2_1` and `conv2_2` as input of another convolution layer `conv3` and then a pooling layer `pool3`. 
 The `pool3` layer was followed by two fully-connected layers and a softmax layer.
 
-After I added the local\_response\_normalization layer to reduce overfitting 
-into my model which is used to improve the model's generalization. 
-I also used L2 regularization into the model, which is added into total loss to avoid overfitting.
+After I built up the new architecture, the training accuracy can achieve 0.99 and the validation accuracy can achieve 0.96, 
+Which indicated that the model suffered overfitting. 
+Then I added the local\_response\_normalization layer 
+Into my model which is used to improve the model's generalization. 
+I also used L2 regularization into my model, which is added into total loss to avoid overfitting.
 
 * Which parameters were tuned? How were they adjusted and why?
 
-I found that if the epoches were 10 or the learning rate was 0.1 , 
-the validation accuracy of this model can't be so good.
+I found that if the epochs were 10 or the learning rate was 0.1 , 
+The validation accuracy of this model can't be so good.
 When the model was trained to the epoch 50, 
-training accuracy reduced to 0.05.
+Training accuracy reduced to 0.05.
 I set the epoch into 60 I get good result.
 
 I also try to tune the learning rate. It was training so fast when learning rate was 0.001,
-but it's hard to get better at the end of training. 
-But when it was 0.0001, 
-the model take a long time for training. 
-So finally I choosed to use step decay learning rate with the initial learning rate 0.001, 
-the decay step 20 and the decay rate 0.96.
+But it's hard to get better at the end of training. 
+But when it was 0.0001, the model take a long time for training. 
+So finally I decided to use step decay learning rate with the initial learning rate 0.001, 
+The decay step 20 and the decay rate 0.96.
 
 * What are some of the important design choices and why were they chosen? For example, why might a convolution layer work well with this problem? How might a dropout layer help with creating a successful model?
 
-**Convolutioon Layer** : *Share Weights* can help the network extracting features from images effectively. 
+**Convolution Layer** : *Share Weights* can help the network extracting features from images effectively. 
 It also reduce the number of parameters in the network, 
-which will accelerate the training process. After convolution, 
-we can extract a mount of different features. These features can help to improve the accuracy of this model.
+Which will accelerate the training process. After convolution, 
+We can extract amount of different features. These features can help to improve the accuracy of this model.
 
-**Pooling Layer** :  Its function is to progressively reduce the spatial size of the representation to reduce the amount of parameters 
-and computation in the network, and hence to also control overfitting.
+**Pooling Layer**:  Its function is to progressively reduce the spatial size of the representation to reduce the amount of parameters 
+And computation in the network, and hence to also control overfitting.
 
-**L2 Regularization and Local Response Normalization**: They both help the model to prevent overfitting and improve gemeralization.
+**L2 Regularization and Local Response Normalization**: They both help the model to prevent overfitting and improve generalization.
+
 
 
 ### Test a Model on New Images
@@ -173,8 +184,8 @@ and computation in the network, and hence to also control overfitting.
 
 Here are five German traffic signs that I found on the web:
 
-![Road work](./figures/1.jpg) ![Speed limit (60km/h)](./figures/2.jpg) ![Children crossing](./figures/3.jpg)
-![Stop](./figures/4.jpg) ![General caution](./figures/5.jpg)
+![Road work](./examples/1.jpg) ![Speed limit (60km/h)](./examples/2.jpg) ![Children crossing](./examples/3.jpg)
+![Stop](./examples/4.jpg) ![General caution](./examples/5.jpg)
 
 The third image might be difficult to classify because the image is so dark that it's hard to identify the sign.
 
