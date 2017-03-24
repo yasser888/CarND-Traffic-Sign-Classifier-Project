@@ -61,7 +61,7 @@ As a first step, I decided to convert the images to grayscale because
 
 Here is an example of a traffic sign image before and after grayscaling.
 
-![grayscale](./exampels/gray.png)
+![grayscale](./examples/gray.png)
 
 #### 2. Describe how, and identify where in your code, you set up training, validation and testing data. How much data was in each set? Explain what techniques were used to split the data into these sets. (OPTIONAL: As described in the "Stand Out Suggestions" part of the rubric, if you generated additional data for training, describe why you decided to generate additional data, how you generated the data, identify where in your code, and provide example images of the additional data)
 
@@ -184,8 +184,8 @@ And computation in the network, and hence to also control overfitting.
 
 Here are five German traffic signs that I found on the web:
 
-![Road work](./examples/1.jpg) ![Speed limit (60km/h)](./examples/2.jpg) ![Children crossing](./examples/3.jpg)
-![Stop](./examples/4.jpg) ![General caution](./examples/5.jpg)
+![Speed limit (30km/h](./examples/1.jpg) ![Priority road](./examples/2.jpg) ![Keep right](./examples/3.jpg)
+![Beware of ice/snow](./examples/4.jpg) ![Turn left ahead](./examples/5.jpg)
 
 The third image might be difficult to classify because the image is so dark that it's hard to identify the sign.
 
