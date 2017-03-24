@@ -242,7 +242,7 @@ For the second image, the model is relatively sure that this is a Priority road 
 | 0.00              |Speed limit (30km/h)                   |
 
 | Logits Value       |     Prediction                        |
-|:-----------------:|:--------------- ---------------------:|
+|:---------------------:|:---------------------------------------------:|   
 | 8117783.5        | Priority road                       |
 |  3902181.        | Roundabout mandatory                | 
 | 1216163.125      | Speed limit(100km/h)                |
@@ -252,25 +252,25 @@ For the second image, the model is relatively sure that this is a Priority road 
 For the third image, the model is relatively sure that this is a Keep right sign (probability of 1.), and the image does contain a Keep right sign. The top five soft max probabilities and its preditions were shown in the left 2 columns of following table, and 2he top five `logits` values and its preditions were shown in the right 2 columns of following table.
 
 | Probability       |     Prediction                          |  
-|:-----------------:|:--------------- --------------  -------:|   
+|:---------------------:|:---------------------------------------------:|   
 | 1.00              | Keep right                              |   
 | 0.00              | Turn left ahead                         |      
 | 0.00              |Go straight or right                     |   
 | 0.00              | Roundabout mandatory                    |   
 | 0.00              |Road work                                |  
 
-  | Logits Value     |     Prediction                      |
-   |:------------------------------------------------------:|
- | 7370561.5        |Keep right                           |
- | 3215804.25       | Turn left ahead                     | 
- | 2330247.75       | Go straight or right                |
- | 1707326.125      | Roundabout mandatory                |
- | 1492557.125      |Road work                            |
+| Logits Value     |     Prediction                      |
+|:---------------------:|:---------------------------------------------:|   
+| 7370561.5        |Keep right                           |
+| 3215804.25       | Turn left ahead                     | 
+| 2330247.75       | Go straight or right                |
+| 1707326.125      | Roundabout mandatory                |
+| 1492557.125      |Road work                            |
 
 For the fourth image, the model is relatively sure that this is a Beware of ice/snow sign (probability of 1.), and the image does contain a Beware of ice/snow. The top five soft max probabilities and its preditions were shown in the left 2 columns of following table, and 2he top five `logits` values and its preditions were shown in the right 2 columns of following table.
 
 | Probability       |     Prediction                          |
-|:-----------------:|:--------------- --------------  -------:|
+|:---------------------:|:---------------------------------------------:|   
 | 1.00              | Beware of ice/snow                      |
 | 0.00              | Right-of-way at the next intersection   | 
 | 0.00              |Dangerous curve to the left              |    
@@ -278,7 +278,7 @@ For the fourth image, the model is relatively sure that this is a Beware of ice/
 | 0.00              |Turn left ahead                          |
 
 | Logits Value    |     Prediction                      |
-|:-----------------------------------------------------:|
+|:---------------------:|:---------------------------------------------:|   
 | 7491763.5       |Beware of ice/snow                   |
 | 6958841.5       |Right-of-way at the next intersection| 
 | 1936115.75      |Dangerous curve to the left          |
@@ -287,7 +287,7 @@ For the fourth image, the model is relatively sure that this is a Beware of ice/
 
 For the fifth image, the model is relatively sure that this is a Turn left ahead sign (probability of 1.), and the image does contain a Turn left ahead sign. The top five soft max probabilities and its preditions were shown in the left 2 columns of following table, and 2he top five `logits` values and its preditions were shown in the right 2 columns of following table.
                | Logits Value    |     Prediction                      |
-|:-----------------:|:--------------- --------------  -------:| 
+|:---------------------:|:---------------------------------------------:|   
 | 1.00              |Turn left ahead                          | 
 | 0.00              | Keep right                              |  
 | 0.00              |Go straight or right                     |
@@ -295,8 +295,8 @@ For the fifth image, the model is relatively sure that this is a Turn left ahead
 | 0.00              |Road work                                | 
 
  | Logits Value    |     Prediction                      |
- |:-----------------------------------------------------:|
- | 7310720.       |Turn left ahead                       |
+|:---------------------:|:---------------------------------------------:|   
+| 7310720.       |Turn left ahead                       |
 | 4443056.       |Keep right                            | 
 | 3791546.25     |Go straight or right                  |
 | 1745910.375    | Ahead only                           |
